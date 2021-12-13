@@ -1,0 +1,31 @@
+header {
+	width: 100%;
+	padding: 6vh 4vw;
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.logo {
+			h1 {
+				font-weight: 700;
+				font-size: 60px;
+				font-style: italic;
+			}
+		}
+
+		.socials {
+			display: flex;
+			gap: 3rem;
+			justify-content: space-between;
+
+			a {
+				span {
+					color: $dark-grey;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}
