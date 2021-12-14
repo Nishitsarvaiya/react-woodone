@@ -3,30 +3,30 @@
 *,
 *::before,
 *::after {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 html,
 body {
-	font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-		Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	overflow-x: hidden;
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+        Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
 }
 
 h1,
@@ -34,14 +34,11 @@ h2,
 h3,
 h4,
 h5 {
-	font-family: 'Montserrat';
-	font-size: 1rem;
-	font-weight: normal;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    font-weight: normal;
 }
 
 p {
-	font-size: $text-sm;
-}
-
-.link {
+    font-size: $text-sm;
 }

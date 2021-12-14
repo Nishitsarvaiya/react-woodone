@@ -1,0 +1,43 @@
+{
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "explorer.compactFolders": false,
+    "prettier.tabWidth": 4,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.printWidth": 120,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": true,
+    "materialTheme.accent": "Blue",
+    "json.format.enable": false,
+    "editor.fontWeight": "500",
+    "editor.fontFamily": "Cascadia Code, SF Mono",
+    "editor.lineHeight": 1.5,
+    "editor.formatOnSave": true,
+    "editor.letterSpacing": 1,
+    "editor.fontLigatures": true,
+    "prettier.endOfLine": "crlf",
+    "prettier.jsxBracketSameLine": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleQuote": true,
+    "git.confirmSync": false,
+    "workbench.colorTheme": "Hybrid Dark Theme",
+    "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
+    "editor.fontSize": 15,
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.wordWrapColumn": 120,
+    "explorer.confirmDragAndDrop": false,
+    "prettier.enable": true
+}

@@ -1,13 +1,10 @@
-import { Header } from '..';
-
 const Layout = ({ children, ...restProps }) => {
-	return (
-		<div className='layout'>
-			<Header />
-			{children}
-			{/* Footer */}
-		</div>
-	);
+    return (
+        <div className='layout'>
+            {children}
+            {/* Footer */}
+        </div>
+    );
 };
 
 export default Layout;
