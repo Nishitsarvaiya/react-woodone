@@ -1,12 +1,15 @@
+import dynamic from 'next/dynamic';
 import { Layout } from '../components';
 import '../styles/app.scss';
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
     return (
         <Layout>
             <Component {...pageProps} />
         </Layout>
     );
-}
+};
 
-export default MyApp;
+export default dynamic(() => Promise.resolve(MyApp), {
+    ssr: false,
+});

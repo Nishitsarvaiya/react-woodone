@@ -1,11 +1,20 @@
+import Link from 'next/link';
+import { useContext } from 'react';
 import { Hamburger } from '..';
+import { MenuContext } from '../menu/menuManager';
 
-const header = ({ page }) => {
+const Header = ({ page }) => {
+    const { active } = useContext(MenuContext);
+
     return (
         <header>
             <nav>
                 <div className='logo'>
-                    <h1>W</h1>
+                    <Link href='/'>
+                        <a>
+                            <h1>W</h1>
+                        </a>
+                    </Link>
                 </div>
                 {page !== 'home' ? (
                     <>
@@ -32,4 +41,4 @@ const header = ({ page }) => {
     );
 };
 
-export default header;
+export default Header;

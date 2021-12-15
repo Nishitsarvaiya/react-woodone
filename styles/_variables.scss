@@ -5,9 +5,9 @@ $grey: #b7b7b7;
 $dark-grey: #707070;
 
 /// TYPOGRAPHY ///
-$text-xl: 6rem;
-$text-lg: 3.5rem;
-$text-md: 2.5rem;
+$text-xl: clamp(2rem, 8vw, 6rem);
+$text-lg: clamp(1.25rem, 4vw, 3.5rem);
+$text-md: clamp(1rem, 2vw, 2.5rem);
 $text-sm: 1.25rem;
 $text-xs: 1rem;
 

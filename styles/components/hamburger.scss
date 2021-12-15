@@ -1,66 +1,70 @@
 .hamburger-container {
-	width: 3.5rem;
-	height: 3.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    z-index: 9999;
 
-	.hamburger {
-		width: 100%;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 6px;
-		cursor: pointer;
+    .hamburger {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        background: none;
+        border: none;
 
-		div {
-			width: 100%;
-			height: 2px;
-			background-color: $white;
-			transition: 750ms $curve;
-		}
+        div {
+            width: 100%;
+            height: 2px;
+            background-color: $white;
+            transition: 1000ms $curve;
+        }
 
-		&:hover {
-			div {
-				&:nth-child(1) {
-					transform: translateY(-5px);
-				}
-				&:nth-child(2) {
-					transform: translateX(10px);
-				}
-				&:nth-child(3) {
-					transform: translateY(5px);
-				}
-			}
+        &:hover {
+            div {
+                &:nth-child(1) {
+                    transform: translateY(-5px);
+                }
+                &:nth-child(2) {
+                    transform: translateX(10px);
+                }
+                &:nth-child(3) {
+                    transform: translateY(5px);
+                }
+            }
 
-			&.active {
-				div {
-					&:nth-child(1) {
-						transform: translate(0px, 8px) rotate(135deg) scaleX(0.6);
-					}
-					&:nth-child(2) {
-						transform: translateX(200px);
-						opacity: 0;
-					}
-					&:nth-child(3) {
-						transform: translate(0px, -8px) rotate(45deg) scaleX(0.6);
-					}
-				}
-			}
-		}
+            &.active {
+                div {
+                    &:nth-child(1) {
+                        transform: translate(0px, 8px) rotate(135deg) scaleX(0.6);
+                    }
+                    &:nth-child(2) {
+                        transform: translateX(200px);
+                        opacity: 0;
+                    }
+                    &:nth-child(3) {
+                        transform: translate(0px, -8px) rotate(45deg) scaleX(0.6);
+                    }
+                }
+            }
+        }
 
-		&.active {
-			div {
-				&:nth-child(1) {
-					transform: translate(0px, 8px) rotate(135deg);
-				}
-				&:nth-child(2) {
-					transform: translateX(200px);
-					opacity: 0;
-				}
-				&:nth-child(3) {
-					transform: translate(0px, -8px) rotate(45deg);
-				}
-			}
-		}
-	}
+        &.active {
+            div {
+                background-color: $black;
+                &:nth-child(1) {
+                    transform: translate(0px, 8px) rotate(135deg);
+                }
+                &:nth-child(2) {
+                    transform: translateX(200px);
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    transform: translate(0px, -8px) rotate(45deg);
+                }
+            }
+        }
+    }
 }

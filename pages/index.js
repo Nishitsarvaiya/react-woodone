@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import HomeImage from '../assets/images/home.jpg';
+import HomeImage from '../assets/images/desk-0.jpg';
 import { Header } from '../components';
 
 const Home = () => {

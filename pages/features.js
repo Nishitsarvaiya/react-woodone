@@ -1,5 +1,11 @@
+import { Header } from '../components';
+
 const Features = () => {
-	return <div>Features</div>;
+    return (
+        <div>
+            <Header />
+        </div>
+    );
 };
 
 export default Features;
