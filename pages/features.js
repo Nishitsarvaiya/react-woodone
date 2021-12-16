@@ -2,9 +2,9 @@ import { Header } from '../components';
 
 const Features = () => {
     return (
-        <div>
+        <main>
             <Header />
-        </div>
+        </main>
     );
 };
 

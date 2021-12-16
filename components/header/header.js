@@ -1,11 +1,7 @@
 import Link from 'next/link';
-import { useContext } from 'react';
 import { Hamburger } from '..';
-import { MenuContext } from '../menu/menuManager';
 
 const Header = ({ page }) => {
-    const { active } = useContext(MenuContext);
-
     return (
         <header>
             <nav>

@@ -22,6 +22,8 @@
             font-weight: 500;
 
             .title-line {
+                overflow: hidden;
+
                 &:nth-child(1) {
                     .title-line__inner {
                         span {

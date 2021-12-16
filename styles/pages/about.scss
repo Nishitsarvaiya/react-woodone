@@ -1,0 +1,66 @@
+.about-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0 4vh;
+
+    .about-section {
+        flex-grow: 1;
+        position: relative;
+
+        .about-header {
+            text-align: center;
+            margin-top: 20vh;
+
+            h1 {
+                font-size: $text-lg;
+                font-weight: 500;
+                margin-bottom: 2rem;
+            }
+
+            h4 {
+                font-size: $text-sm;
+                color: $grey;
+                line-height: 1.5;
+            }
+        }
+
+        .about-footer {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            width: 100%;
+
+            .footer {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+
+                &-message {
+                    h3 {
+                        font-size: $text-sm;
+                        margin-bottom: 5px;
+                    }
+                    p {
+                        font-size: $text-xs;
+                        color: $dark-grey;
+                    }
+                }
+
+                &-order {
+                    .order-btn {
+                        background: $white;
+                        border: none;
+                        padding: 3rem;
+
+                        img {
+                            width: 32px;
+                            height: 32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

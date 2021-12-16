@@ -1,7 +1,7 @@
 import { useContext, useRef } from 'react';
 import { MenuContext } from '../menu/menuManager';
 
-const Hamburger = () => {
+const Hamburger = ({ page }) => {
     const { active, setActive } = useContext(MenuContext);
     let hamburger = useRef(null);
 

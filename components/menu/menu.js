@@ -4,64 +4,65 @@ import Image from 'next/image';
 import { useContext, useEffect, useRef } from 'react';
 import { MenuContext } from './menuManager';
 import MenuImage from '../../assets/images/desk-10.jpg';
+import { useRouter } from 'next/router';
 
 const Menu = () => {
-    const { active } = useContext(MenuContext);
+    const router = useRouter();
+    const { active, setActive } = useContext(MenuContext);
     let container = useRef(null);
     let slide1 = useRef(null);
     let slide2 = useRef(null);
     let slide3 = useRef(null);
 
+    const onLinkHoverEnter = (e) => {
+        let bg = e.target.querySelector('.nav-item__bg');
+        let text = e.target.querySelector('.nav-item__inner h1');
+
+        gsap.to(bg, 0.5, {
+            width: '100%',
+            ease: 'power3.out',
+        });
+
+        gsap.to(text, 0.2, {
+            color: '#ffffff',
+            ease: 'power3.out',
+        });
+    };
+
+    const onLinkHoverLeave = (e) => {
+        let bg = e.target.querySelector('.nav-item__bg');
+        let text = e.target.querySelector('.nav-item__inner h1');
+
+        gsap.to(bg, 0.5, {
+            width: '0',
+            ease: 'power3.out',
+        });
+
+        gsap.to(text, 0.2, {
+            color: '#171615',
+            ease: 'power3.out',
+        });
+    };
+
     useEffect(() => {
-        const fadeIn = (el, duration, delay, fromY, toY) => {
-            gsap.fromTo(
-                el,
-                {
-                    y: fromY,
-                    opacity: 0,
-                },
-                {
-                    duration: duration,
-                    delay: delay,
-                    y: toY,
-                    opacity: 1,
-                    ease: 'power3.out',
-                }
-            );
-        };
+        let links = document.querySelectorAll('.nav-item');
 
-        const staggerIn = (els, duration, delay, direction, fromY, toY, stagger) => {
-            if (direction === 'x') {
-                gsap.fromTo(
-                    [...els],
-                    {
-                        x: fromY,
-                    },
-                    {
-                        duration: duration,
-                        delay: delay,
-                        x: toY,
-                        ease: 'power3.inOut',
-                        stagger: stagger,
-                    }
-                );
-            } else {
-                gsap.fromTo(
-                    [...els],
-                    {
-                        y: fromY,
-                    },
-                    {
-                        duration: duration,
-                        delay: delay,
-                        y: toY,
-                        ease: 'power3.inOut',
-                        stagger: stagger,
-                    }
-                );
-            }
-        };
+        links.forEach((link) => link.addEventListener('mouseenter', onLinkHoverEnter));
+        links.forEach((link) => link.addEventListener('mouseleave', onLinkHoverLeave));
 
+        return () => {
+            links.forEach((link) => link.removeEventListener('mouseenter', onLinkHoverEnter));
+            links.forEach((link) => link.removeEventListener('mouseleave', onLinkHoverLeave));
+        };
+    }, []);
+
+    useEffect(() => {
+        if (active) {
+            setActive(!active);
+        }
+    }, [router.asPath]);
+
+    useEffect(() => {
         const lines = document.querySelectorAll('.line');
         const links = document.querySelectorAll('.nav-item__inner h1');
 
@@ -99,22 +100,23 @@ const Menu = () => {
             gsap.fromTo(
                 [...links],
                 {
-                    // scale: '0.8',
+                    skewX: 30,
                     y: '200%',
+                    x: '20%',
                 },
                 {
                     duration: 1.5,
                     delay: 0.5,
-                    transformOrigin: 'left bottom',
-                    // scale: '1',
+                    skewX: 0,
                     y: '0',
+                    x: '0',
                     ease: 'power3.out',
                     stagger: 0.07,
                 }
             );
 
             gsap.fromTo(
-                ['.socials a', '.link'],
+                ['.menu-footer .socials a', '.menu-footer .link'],
                 {
                     y: '200%',
                     opacity: 0,
@@ -130,19 +132,6 @@ const Menu = () => {
             );
 
             gsap.fromTo(
-                '.menu-image .image',
-                {
-                    width: 0,
-                },
-                {
-                    duration: 1.5,
-                    delay: 0.8,
-                    width: '100%',
-                    ease: 'power3.out',
-                }
-            );
-
-            gsap.fromTo(
                 '.menu-image .image img',
                 {
                     scale: 1.2,
@@ -154,7 +143,93 @@ const Menu = () => {
                     ease: 'power3.out',
                 }
             );
+
+            gsap.fromTo(
+                '.menu-image .image',
+                {
+                    width: 0,
+                },
+                {
+                    duration: 1.5,
+                    delay: 0.8,
+                    width: '100%',
+                    x: '0',
+                    ease: 'power3.out',
+                }
+            );
         } else {
+            gsap.fromTo(
+                [...lines],
+                {
+                    scaleX: '1',
+                },
+                {
+                    duration: 1.5,
+                    transformOrigin: 'right',
+                    scaleX: '0',
+                    ease: 'power3.out',
+                    stagger: 0.07,
+                }
+            );
+
+            gsap.fromTo(
+                [...links],
+                {
+                    skewX: 0,
+                    y: '0',
+                    x: '0',
+                },
+                {
+                    duration: 1.5,
+                    skewX: -30,
+                    y: '-200%',
+                    x: '20%',
+                    ease: 'power3.out',
+                    stagger: 0.07,
+                }
+            );
+
+            gsap.fromTo(
+                ['.menu-footer .socials a', '.menu-footer .link'],
+                {
+                    y: '0',
+                    opacity: 1,
+                },
+                {
+                    duration: 1.5,
+                    delay: 0.2,
+                    y: '-200%',
+                    opacity: 0,
+                    ease: 'power3.out',
+                    stagger: 0.05,
+                }
+            );
+
+            gsap.fromTo(
+                '.menu-image .image img',
+                {
+                    scale: 1,
+                },
+                {
+                    duration: 1.5,
+                    scale: 1.2,
+                    ease: 'power3.out',
+                }
+            );
+
+            gsap.fromTo(
+                '.menu-image .image',
+                {
+                    x: '0',
+                },
+                {
+                    duration: 1,
+                    delay: 0.2,
+                    x: '200%',
+                    ease: 'power3.inOut',
+                }
+            );
+
             gsap.fromTo(
                 [slide1, slide2, slide3],
                 {
@@ -193,19 +268,13 @@ const Menu = () => {
                 </div>
             </div>
             <div className='menu'>
-                {/* <div className='menu-logo'>
-                    <Link href=''>
-                        <a>
-                            <h1>W</h1>
-                        </a>
-                    </Link>
-                </div> */}
                 <div className='menu-navigation'>
                     <nav className='nav'>
                         <div className='line'>
                             <span></span>
                         </div>
                         <div className='nav-item'>
+                            <div className='nav-item__bg'></div>
                             <Link href='/'>
                                 <a className='nav-item__inner'>
                                     <h1>Home</h1>
@@ -216,6 +285,7 @@ const Menu = () => {
                             <span></span>
                         </div>
                         <div className='nav-item'>
+                            <div className='nav-item__bg'></div>
                             <Link href='/about'>
                                 <a className='nav-item__inner'>
                                     <h1>About</h1>
@@ -226,6 +296,7 @@ const Menu = () => {
                             <span></span>
                         </div>
                         <div className='nav-item'>
+                            <div className='nav-item__bg'></div>
                             <Link href='/features'>
                                 <a className='nav-item__inner'>
                                     <h1>Features</h1>
@@ -236,6 +307,7 @@ const Menu = () => {
                             <span></span>
                         </div>
                         <div className='nav-item'>
+                            <div className='nav-item__bg'></div>
                             <Link href='/specifications'>
                                 <a className='nav-item__inner'>
                                     <h1>Specifications</h1>
@@ -246,6 +318,7 @@ const Menu = () => {
                             <span></span>
                         </div>
                         <div className='nav-item'>
+                            <div className='nav-item__bg'></div>
                             <Link href='/order'>
                                 <a className='nav-item__inner'>
                                     <h1>Order</h1>
