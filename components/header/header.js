@@ -6,11 +6,7 @@ const Header = ({ page }) => {
         <header>
             <nav>
                 <div className='logo'>
-                    <Link href='/'>
-                        <a>
-                            <h1>W</h1>
-                        </a>
-                    </Link>
+                    <h1>W</h1>
                 </div>
                 {page !== 'home' ? (
                     <>

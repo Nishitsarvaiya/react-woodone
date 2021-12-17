@@ -10,18 +10,18 @@ const Home = () => {
             '.title-line__inner',
             1.5,
             { y: '200%', scaleX: 1.5 },
-            { y: '0', scaleX: 1, transformOrigin: 'left', ease: 'power3.out', stagger: 0.1 }
+            { y: '0', delay: 1, scaleX: 1, transformOrigin: 'left', ease: 'power3.out', stagger: 0.1 }
         );
 
         gsap.fromTo(
             ['.title-line__inner', '.hero-footer a'],
             1.5,
             { y: '200%' },
-            { y: '0', ease: 'power3.out', stagger: 0.1 }
+            { y: '0', delay: 1, ease: 'power3.out', stagger: 0.1 }
         );
 
-        gsap.fromTo('.hero-image .image', 1.5, { width: 0 }, { width: '100%', ease: 'power3.out' });
-        gsap.fromTo('.hero-image .image img', 1.5, { scale: 1.5 }, { scale: 1, ease: 'power3.out' });
+        gsap.fromTo('.hero-image .image', 1.5, { width: 0 }, { width: '100%', delay: 1, ease: 'power3.out' });
+        gsap.fromTo('.hero-image .image img', 1.5, { scale: 1.5 }, { scale: 1, delay: 1, ease: 'power3.out' });
     }, []);
 
     return (

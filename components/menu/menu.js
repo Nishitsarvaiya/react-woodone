@@ -1,22 +1,22 @@
 import gsap from 'gsap';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { MenuContext } from './menuManager';
 import MenuImage from '../../assets/images/desk-10.jpg';
 import { useRouter } from 'next/router';
 
 const Menu = () => {
     const router = useRouter();
-    const { active, setActive } = useContext(MenuContext);
+    const { menuState, setMenuState } = useContext(MenuContext);
     let container = useRef(null);
     let slide1 = useRef(null);
     let slide2 = useRef(null);
     let slide3 = useRef(null);
 
     const onLinkHoverEnter = (e) => {
-        let bg = e.target.querySelector('.nav-item__bg');
-        let text = e.target.querySelector('.nav-item__inner h1');
+        let bg = e.target.parentNode.querySelector('.nav-item__bg');
+        let text = e.target.parentNode.querySelector('.nav-item__inner h1');
 
         gsap.to(bg, 0.5, {
             width: '100%',
@@ -30,8 +30,8 @@ const Menu = () => {
     };
 
     const onLinkHoverLeave = (e) => {
-        let bg = e.target.querySelector('.nav-item__bg');
-        let text = e.target.querySelector('.nav-item__inner h1');
+        let bg = e.target.parentNode.querySelector('.nav-item__bg');
+        let text = e.target.parentNode.querySelector('.nav-item__inner h1');
 
         gsap.to(bg, 0.5, {
             width: '0',
@@ -45,7 +45,7 @@ const Menu = () => {
     };
 
     useEffect(() => {
-        let links = document.querySelectorAll('.nav-item');
+        let links = document.querySelectorAll('.nav-item__inner');
 
         links.forEach((link) => link.addEventListener('mouseenter', onLinkHoverEnter));
         links.forEach((link) => link.addEventListener('mouseleave', onLinkHoverLeave));
@@ -57,8 +57,8 @@ const Menu = () => {
     }, []);
 
     useEffect(() => {
-        if (active) {
-            setActive(!active);
+        if (menuState.active) {
+            setMenuState({ active: !menuState.active });
         }
     }, [router.asPath]);
 
@@ -66,7 +66,7 @@ const Menu = () => {
         const lines = document.querySelectorAll('.line');
         const links = document.querySelectorAll('.nav-item__inner h1');
 
-        if (active) {
+        if (menuState.active === true || (menuState.active === true && menuState.initial === null)) {
             gsap.to(container, 0, { css: { zIndex: 100, visibility: 'visible' } });
 
             gsap.fromTo(
@@ -157,7 +157,7 @@ const Menu = () => {
                     ease: 'power3.out',
                 }
             );
-        } else {
+        } else if (menuState.active === false) {
             gsap.fromTo(
                 [...lines],
                 {
@@ -252,7 +252,7 @@ const Menu = () => {
                 },
             });
         }
-    }, [active]);
+    }, [menuState.active, menuState.initial]);
 
     return (
         <div className='menu-container' ref={(el) => (container = el)}>
