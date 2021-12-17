@@ -10,10 +10,10 @@ const About = () => {
             ['.about-header h1', '.about-header h4', '.footer-message h3', '.footer-message p'],
             1.5,
             { y: '200%' },
-            { y: '0', delay: 1, ease: 'power3.out', stagger: 0.3 }
+            { y: '0', delay: 0.75, ease: 'power3.out', stagger: 0.3 }
         );
 
-        gsap.fromTo('.footer-order .order-btn', 1.5, { scale: 0 }, { scale: 1, delay: 1.75, ease: 'power3.out' });
+        gsap.fromTo('.footer-order .order-btn', 1.5, { scale: 0 }, { scale: 1, delay: 1, ease: 'power3.out' });
     }, []);
     return (
         <main className='about-page'>

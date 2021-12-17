@@ -12,7 +12,9 @@ const Features = () => {
                 <div className='features'>
                     <div className='feature'>
                         <div className='feature-image'>
-                            <Image src={Feature1} alt='' layout='fill' />
+                            <div className='image'>
+                                <Image src={Feature1} alt='' layout='fill' />
+                            </div>
                         </div>
                         <div className='feature-content'>
                             <div className='content'>
@@ -55,12 +57,16 @@ const Features = () => {
                             </div>
                         </div>
                         <div className='feature-image'>
-                            <Image src={Feature2} alt='' layout='fill' />
+                            <div className='image'>
+                                <Image src={Feature2} alt='' layout='fill' />
+                            </div>
                         </div>
                     </div>
                     <div className='feature'>
                         <div className='feature-image'>
-                            <Image src={Feature3} alt='' layout='fill' />
+                            <div className='image'>
+                                <Image src={Feature3} alt='' layout='fill' />
+                            </div>
                         </div>
                         <div className='feature-content'>
                             <div className='content'>
