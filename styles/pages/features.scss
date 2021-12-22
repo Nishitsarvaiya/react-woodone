@@ -26,6 +26,12 @@
                 .content {
                     padding-left: 4rem;
 
+                    &-number,
+                    &-title,
+                    &-text {
+                        overflow: hidden;
+                    }
+
                     &-number {
                         p {
                             color: $dark-grey;

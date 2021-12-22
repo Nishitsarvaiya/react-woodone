@@ -3,8 +3,21 @@ import { Header } from '../components';
 import Feature1 from '../assets/images/desk-2.jpg';
 import Feature2 from '../assets/images/desk-5.jpg';
 import Feature3 from '../assets/images/desk-3.jpg';
+import { useEffect } from 'react';
+import gsap from 'gsap';
 
 const Features = () => {
+    useEffect(() => {
+        gsap.fromTo('.feature-image .image', 1.5, { width: 0 }, { delay: 1, width: '100%', ease: 'power3.out' });
+        gsap.fromTo('.feature-image .image img', 1.5, { scale: 1.2 }, { delay: 1, scale: 1, ease: 'power3.out' });
+
+        gsap.fromTo(
+            ['.content-number p', '.content-title h1', '.content-text p'],
+            1.5,
+            { y: '200%' },
+            { delay: 1, y: '0', ease: 'power3.out', stagger: 0.07 }
+        );
+    });
     return (
         <main>
             <Header />
