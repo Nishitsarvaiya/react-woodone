@@ -3,7 +3,7 @@ import { Hamburger } from '..';
 
 const Header = ({ page }) => {
     return (
-        <header>
+        <header data-scroll-section>
             <nav>
                 <div className='logo'>
                     <h1>W</h1>

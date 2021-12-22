@@ -8,16 +8,20 @@ const Features = () => {
     return (
         <main>
             <Header />
-            <section className='features-section'>
+            <section className='features-section' data-scroll-section data-scroll>
                 <div className='features'>
                     <div className='feature'>
-                        <div className='feature-image'>
+                        <div
+                            className='feature-image'
+                            data-scroll
+                            data-scroll-direction='horizontal'
+                            data-scroll-speed='2'>
                             <div className='image'>
                                 <Image src={Feature1} alt='' layout='fill' />
                             </div>
                         </div>
                         <div className='feature-content'>
-                            <div className='content'>
+                            <div className='content' data-scroll data-scroll-speed='2'>
                                 <div className='content-number'>
                                     <p>
                                         <span>01</span> / 03
@@ -38,7 +42,7 @@ const Features = () => {
                     </div>
                     <div className='feature'>
                         <div className='feature-content'>
-                            <div className='content'>
+                            <div className='content' data-scroll data-scroll-speed='2'>
                                 <div className='content-number'>
                                     <p>
                                         <span>02</span> / 03
@@ -56,20 +60,28 @@ const Features = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='feature-image'>
+                        <div
+                            className='feature-image'
+                            data-scroll
+                            data-scroll-direction='horizontal'
+                            data-scroll-speed='-2'>
                             <div className='image'>
                                 <Image src={Feature2} alt='' layout='fill' />
                             </div>
                         </div>
                     </div>
                     <div className='feature'>
-                        <div className='feature-image'>
+                        <div
+                            className='feature-image'
+                            data-scroll
+                            data-scroll-direction='horizontal'
+                            data-scroll-speed='2'>
                             <div className='image'>
                                 <Image src={Feature3} alt='' layout='fill' />
                             </div>
                         </div>
                         <div className='feature-content'>
-                            <div className='content'>
+                            <div className='content' data-scroll data-scroll-speed='2' data-scroll-call='elementInView'>
                                 <div className='content-number'>
                                     <p>
                                         <span>03</span> / 03
