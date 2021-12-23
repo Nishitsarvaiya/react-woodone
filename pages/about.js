@@ -1,5 +1,4 @@
-import { Header } from '../components';
-import PlusIcon from '../assets/images/icon-plus.svg';
+import { Header, OrderBtn } from '../components';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import gsap from 'gsap';
@@ -13,7 +12,7 @@ const About = () => {
             { y: '0', delay: 0.75, ease: 'power3.out', stagger: 0.3 }
         );
 
-        gsap.fromTo('.footer-order .order-btn', 1.5, { scale: 0 }, { scale: 1, delay: 1, ease: 'power3.out' });
+        gsap.fromTo('.order-btn', 1.5, { scale: 0 }, { scale: 1, delay: 1, ease: 'power3.out' });
     }, []);
     return (
         <main className='about-page'>
@@ -40,11 +39,7 @@ const About = () => {
                                 <p>Woodone Team</p>
                             </div>
                         </div>
-                        <div className='footer-order'>
-                            <button className='order-btn'>
-                                <Image src={PlusIcon} alt='' />
-                            </button>
-                        </div>
+                        <OrderBtn />
                     </div>
                 </div>
             </section>

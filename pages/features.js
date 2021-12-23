@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Header } from '../components';
+import { Header, OrderBtn } from '../components';
 import Feature1 from '../assets/images/desk-2.jpg';
 import Feature2 from '../assets/images/desk-5.jpg';
 import Feature3 from '../assets/images/desk-3.jpg';
@@ -16,6 +16,12 @@ const Features = () => {
             1.5,
             { y: '200%' },
             { delay: 1, y: '0', ease: 'power3.out', stagger: 0.07 }
+        );
+        gsap.fromTo(
+            '.order-btn',
+            1.5,
+            { scaleX: 0 },
+            { scaleX: 1, transformOrigin: 'left', delay: 1, ease: 'power3.out' }
         );
     });
     return (
@@ -115,6 +121,7 @@ const Features = () => {
                     </div>
                 </div>
             </section>
+            <OrderBtn />
         </main>
     );
 };
