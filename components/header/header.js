@@ -1,7 +1,17 @@
-import Link from 'next/link';
+import gsap from 'gsap';
+import { useEffect } from 'react';
 import { Hamburger } from '..';
 
 const Header = ({ page }) => {
+    useEffect(() => {
+        gsap.fromTo(
+            ['.logo h1', '.link', '.socials a', '.hamburger'],
+            1,
+            { y: '100%', opacity: 0 },
+            { y: '0', opacity: 1, stagger: 0.1 }
+        );
+    }, []);
+
     return (
         <header data-scroll-section>
             <nav>

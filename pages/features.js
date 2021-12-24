@@ -10,6 +10,7 @@ const Features = () => {
     useEffect(() => {
         gsap.fromTo('.feature-image .image', 1.5, { width: 0 }, { delay: 1, width: '100%', ease: 'power3.out' });
         gsap.fromTo('.feature-image .image img', 1.5, { scale: 1.2 }, { delay: 1, scale: 1, ease: 'power3.out' });
+        gsap.fromTo('.feature-image .info', 1, { y: '100%' }, { delay: 1.8, y: '0', ease: 'power3.out' });
 
         gsap.fromTo(
             ['.content-number p', '.content-title h1', '.content-text p'],
@@ -37,6 +38,9 @@ const Features = () => {
                             data-scroll-speed='2'>
                             <div className='image'>
                                 <Image src={Feature1} alt='' layout='fill' />
+                            </div>
+                            <div className='info'>
+                                <p>30 - 40mm of thickness</p>
                             </div>
                         </div>
                         <div className='feature-content'>
@@ -87,6 +91,9 @@ const Features = () => {
                             <div className='image'>
                                 <Image src={Feature2} alt='' layout='fill' />
                             </div>
+                            <div className='info'>
+                                <p>580 - 1230mm of height range</p>
+                            </div>
                         </div>
                     </div>
                     <div className='feature'>
@@ -97,6 +104,9 @@ const Features = () => {
                             data-scroll-speed='2'>
                             <div className='image'>
                                 <Image src={Feature3} alt='' layout='fill' />
+                            </div>
+                            <div className='info'>
+                                <p>6 sizes available</p>
                             </div>
                         </div>
                         <div className='feature-content'>
