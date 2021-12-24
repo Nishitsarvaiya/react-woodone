@@ -4,3 +4,4 @@ export { default as Hamburger } from './hamburger/hamburger';
 export { default as OrderBtn } from './orderBtn/orderBtn';
 export { default as Menu } from './menu/menu';
 export { default as MenuManager } from './menu/menuManager.js';
+export { default as Gallery } from './gallery/gallery.js';

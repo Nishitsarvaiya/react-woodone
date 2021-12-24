@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { useEffect } from 'react';
-import { Header, OrderBtn } from '../components';
+import { Gallery, Header, OrderBtn } from '../components';
 import useLocoScroll from '../hooks/useLocoScroll';
 
 const Specifications = () => {
@@ -193,6 +193,7 @@ const Specifications = () => {
                     </div>
                 </div>
             </section>
+            <Gallery />
             <OrderBtn />
         </main>
     );
