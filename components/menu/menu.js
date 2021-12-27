@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useContext, useEffect, useRef, useState } from 'react';
-import { MenuContext } from './menuManager';
+import { MenuContext } from './menu.manager.js';
 import MenuImage from '../../assets/images/desk-10.jpg';
 import { useRouter } from 'next/router';
 

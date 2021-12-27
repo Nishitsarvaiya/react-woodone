@@ -1,9 +1,14 @@
 import { useContext, useRef } from 'react';
-import { MenuContext } from '../menu/menuManager';
+import { MenuContext } from '../menu/menu.manager';
+import { CursorContext } from '../cursor/cursor.manager';
 
 const Hamburger = ({ page }) => {
+    const { setSize } = useContext(CursorContext);
     const { menuState, setMenuState } = useContext(MenuContext);
     let hamburger = useRef(null);
+
+    const mouseEntered = () => setSize('lg');
+    const mouseLeft = () => setSize('sm');
 
     const toggleMenuHandler = () => {
         let ham = hamburger;

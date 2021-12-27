@@ -3,5 +3,7 @@ export { default as Header } from './header/header';
 export { default as Hamburger } from './hamburger/hamburger';
 export { default as OrderBtn } from './orderBtn/orderBtn';
 export { default as Menu } from './menu/menu';
-export { default as MenuManager } from './menu/menuManager.js';
+export { default as MenuManager } from './menu/menu.manager.js';
 export { default as Gallery } from './gallery/gallery.js';
+export { default as Cursor } from './cursor/cursor.js';
+export { default as CursorManager } from './cursor/cursor.manager.js';

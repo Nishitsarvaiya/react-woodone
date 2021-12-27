@@ -1,0 +1,42 @@
+.base-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    backface-visibility: hidden;
+    mix-blend-mode: difference;
+    z-index: 9999999;
+
+    .outer-cursor {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .inner-cursor {
+        min-width: 12rem;
+        min-height: 12rem;
+        width: 12vw;
+        height: 12vw;
+        background-color: $white;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: 500ms $curve;
+    }
+
+    &.is-visible {
+        .outer-cursor {
+            .inner-cursor {
+                &.cursor-sm {
+                    transform: scale(0.05);
+                }
+                &.cursor-lg {
+                    transform: scale(0.5);
+                }
+            }
+        }
+    }
+}
