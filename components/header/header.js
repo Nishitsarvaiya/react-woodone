@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { useEffect } from 'react';
-import { Hamburger } from '..';
+import { CustomLink, Hamburger } from '..';
 
 const Header = ({ page }) => {
     useEffect(() => {
@@ -21,17 +21,13 @@ const Header = ({ page }) => {
                 {page !== 'home' ? (
                     <>
                         <div>
-                            <a href='#' className='link' data-cursor-target>
+                            <a href='#' className='link' data-cursor-target data-cursor-stick>
                                 <span>hello@woodone.co</span>
                             </a>
                         </div>
                         <div className='socials'>
-                            <a href='#' data-cursor-target>
-                                <span>Facebook</span>
-                            </a>
-                            <a href='#' data-cursor-target>
-                                <span>Instagram</span>
-                            </a>
+                            <CustomLink>Facebook</CustomLink>
+                            <CustomLink>Instagram</CustomLink>
                         </div>
                     </>
                 ) : (

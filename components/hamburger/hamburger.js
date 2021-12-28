@@ -41,7 +41,8 @@ const Hamburger = ({ page }) => {
                 className={menuState.active ? 'hamburger active' : 'hamburger'}
                 onClick={toggleMenuHandler}
                 ref={(el) => (hamburger = el)}
-                data-cursor-target>
+                data-cursor-target
+                data-cursor-stick>
                 <div></div>
                 <div></div>
                 <div></div>
