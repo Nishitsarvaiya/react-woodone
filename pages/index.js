@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import HomeImage from '../assets/images/desk-2.jpg';
-import { Header } from '../components';
+import { CustomLink, Header } from '../components';
 
 const Home = () => {
     useEffect(() => {
@@ -46,12 +46,8 @@ const Home = () => {
                     </h1>
                     <div className='hero-footer'>
                         <div className='socials'>
-                            <a href='#'>
-                                <span>Facebook</span>
-                            </a>
-                            <a href='#'>
-                                <span>Instagram</span>
-                            </a>
+                            <CustomLink>Facebook</CustomLink>
+                            <CustomLink>Instagram</CustomLink>
                         </div>
                         <div>
                             <a href='#' className='link'>
@@ -60,7 +56,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='hero-image'>
-                        <div className='image'>
+                        <div className='image' data-cursor-target>
                             <Image src={HomeImage} alt='' layout='fill' />
                         </div>
                     </div>

@@ -36,7 +36,7 @@ const Features = () => {
                             data-scroll
                             data-scroll-direction='horizontal'
                             data-scroll-speed='2'>
-                            <div className='image'>
+                            <div className='image' data-cursor-target>
                                 <Image src={Feature1} alt='' layout='fill' />
                             </div>
                             <div className='info'>
@@ -88,7 +88,7 @@ const Features = () => {
                             data-scroll
                             data-scroll-direction='horizontal'
                             data-scroll-speed='-2'>
-                            <div className='image'>
+                            <div className='image' data-cursor-target>
                                 <Image src={Feature2} alt='' layout='fill' />
                             </div>
                             <div className='info'>
@@ -102,7 +102,7 @@ const Features = () => {
                             data-scroll
                             data-scroll-direction='horizontal'
                             data-scroll-speed='2'>
-                            <div className='image'>
+                            <div className='image' data-cursor-target>
                                 <Image src={Feature3} alt='' layout='fill' />
                             </div>
                             <div className='info'>

@@ -4,7 +4,7 @@ import PlusIcon from '../../assets/images/icon-plus.svg';
 
 const OrderBtn = () => {
     return (
-        <div className='order-btn'>
+        <div className='order-btn' data-cursor-target>
             <div className='btn'>
                 <Link href='/order'>
                     <a>

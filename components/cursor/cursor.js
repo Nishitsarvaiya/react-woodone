@@ -1,9 +1,11 @@
 import gsap from 'gsap';
+import { useRouter } from 'next/router';
 import { useEffect, useRef, useState, useContext } from 'react';
 import { CursorContext } from './cursor.manager.js';
 
 const Cursor = () => {
-    const { size } = useContext(CursorContext);
+    const router = useRouter();
+    const { size, setSize } = useContext(CursorContext);
     const [isVisible, setIsVisible] = useState(false);
     const cursorRef = useRef();
     const mouseRef = useRef({
@@ -43,9 +45,9 @@ const Cursor = () => {
         });
 
         return () => {
-            document.body.removeEventListener('mouseenter');
-            document.body.removeEventListener('mouseleave');
-            window.removeEventListener('mousemove');
+            document.body.removeEventListener('mouseenter', null);
+            document.body.removeEventListener('mouseleave', null);
+            window.removeEventListener('mousemove', null);
         };
     }, []);
 
@@ -72,6 +74,29 @@ const Cursor = () => {
 
         mouseRef.current.raf = requestAnimationFrame(move);
     }, []);
+
+    useEffect(() => {
+        let targets = document.querySelectorAll('[data-cursor-target]');
+
+        targets.forEach((target) => {
+            target.addEventListener('mouseenter', (e) => {
+                console.log(e.target);
+                if (e.target.classList.contains('image')) {
+                    setSize('lg');
+                } else {
+                    setSize('md');
+                }
+            });
+            target.addEventListener('mouseleave', () => setSize('sm'));
+            target.addEventListener('click', () => setSize('sm'));
+
+            return () => {
+                target.removeEventListener('mouseenter', null);
+                target.removeEventListener('mouseleave', null);
+                target.removeEventListener('click', null);
+            };
+        });
+    }, [router.asPath]);
 
     return (
         <div className={isVisible ? 'base-cursor is-visible' : 'base-cursor'} ref={cursorRef}>

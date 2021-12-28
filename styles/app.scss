@@ -4,7 +4,6 @@
 
 /// Global Styles ///
 @import 'global.scss';
-@import 'shared.scss';
 
 /// Components ///
 @import './components/layout.scss';
@@ -14,6 +13,7 @@
 @import './components/orderbtn.scss';
 @import './components/gallery.scss';
 @import './components/cursor.scss';
+@import './components/link.scss';
 
 /// Pages ///
 @import './pages/home.scss';

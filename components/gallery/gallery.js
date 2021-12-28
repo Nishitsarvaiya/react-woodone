@@ -30,19 +30,19 @@ const Gallery = () => {
             </div>
             <div className='gallery'>
                 <div className='images'>
-                    <div className='image'>
+                    <div className='image' data-cursor-target>
                         <Image src={Image1} layout='fill' alt='' />
                     </div>
-                    <div className='image'>
+                    <div className='image' data-cursor-target>
                         <Image src={Image1} layout='fill' alt='' />
                     </div>
-                    <div className='image'>
+                    <div className='image' data-cursor-target>
                         <Image src={Image1} layout='fill' alt='' />
                     </div>
-                    <div className='image'>
+                    <div className='image' data-cursor-target>
                         <Image src={Image1} layout='fill' alt='' />
                     </div>
-                    <div className='image'>
+                    <div className='image' data-cursor-target>
                         <Image src={Image1} layout='fill' alt='' />
                     </div>
                 </div>

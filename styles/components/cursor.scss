@@ -33,8 +33,11 @@
                 &.cursor-sm {
                     transform: scale(0.05);
                 }
+                &.cursor-md {
+                    transform: scale(0.25);
+                }
                 &.cursor-lg {
-                    transform: scale(0.5);
+                    transform: scale(0.75);
                 }
             }
         }

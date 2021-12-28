@@ -21,15 +21,15 @@ const Header = ({ page }) => {
                 {page !== 'home' ? (
                     <>
                         <div>
-                            <a href='#' className='link'>
+                            <a href='#' className='link' data-cursor-target>
                                 <span>hello@woodone.co</span>
                             </a>
                         </div>
                         <div className='socials'>
-                            <a href='#'>
+                            <a href='#' data-cursor-target>
                                 <span>Facebook</span>
                             </a>
-                            <a href='#'>
+                            <a href='#' data-cursor-target>
                                 <span>Instagram</span>
                             </a>
                         </div>
