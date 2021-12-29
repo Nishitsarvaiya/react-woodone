@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { MenuContext } from './menu.manager.js';
 import MenuImage from '../../assets/images/desk-10.jpg';
 import { useRouter } from 'next/router';
@@ -275,7 +275,7 @@ const Menu = () => {
                         </div>
                         <div className='nav-item'>
                             <div className='nav-item__bg'></div>
-                            <Link href='/'>
+                            <Link href='/' as={process.env.BACKEND_URL + '/'}>
                                 <a className='nav-item__inner'>
                                     <h1>Home</h1>
                                 </a>
@@ -286,7 +286,7 @@ const Menu = () => {
                         </div>
                         <div className='nav-item'>
                             <div className='nav-item__bg'></div>
-                            <Link href='/about'>
+                            <Link href='/about' as={process.env.BACKEND_URL + '/about'}>
                                 <a className='nav-item__inner'>
                                     <h1>About</h1>
                                 </a>
@@ -297,7 +297,7 @@ const Menu = () => {
                         </div>
                         <div className='nav-item'>
                             <div className='nav-item__bg'></div>
-                            <Link href='/features'>
+                            <Link href='/features' as={process.env.BACKEND_URL + '/features'}>
                                 <a className='nav-item__inner'>
                                     <h1>Features</h1>
                                 </a>
@@ -308,7 +308,7 @@ const Menu = () => {
                         </div>
                         <div className='nav-item'>
                             <div className='nav-item__bg'></div>
-                            <Link href='/specifications'>
+                            <Link href='/specifications' as={process.env.BACKEND_URL + '/specifications'}>
                                 <a className='nav-item__inner'>
                                     <h1>Specifications</h1>
                                 </a>
@@ -319,7 +319,7 @@ const Menu = () => {
                         </div>
                         <div className='nav-item'>
                             <div className='nav-item__bg'></div>
-                            <Link href='/order'>
+                            <Link href='/order' as={process.env.BACKEND_URL + '/order'}>
                                 <a className='nav-item__inner'>
                                     <h1>Order</h1>
                                 </a>
