@@ -275,7 +275,7 @@ const Menu = () => {
                         </div>
                         <div className='nav-item'>
                             <div className='nav-item__bg'></div>
-                            <Link href='/' as={process.env.BACKEND_URL + '/'}>
+                            <Link href='/'>
                                 <a className='nav-item__inner'>
                                     <h1>Home</h1>
                                 </a>
@@ -286,7 +286,7 @@ const Menu = () => {
                         </div>
                         <div className='nav-item'>
                             <div className='nav-item__bg'></div>
-                            <Link href='/about' as={process.env.BACKEND_URL + '/about'}>
+                            <Link href='/about'>
                                 <a className='nav-item__inner'>
                                     <h1>About</h1>
                                 </a>
@@ -297,7 +297,7 @@ const Menu = () => {
                         </div>
                         <div className='nav-item'>
                             <div className='nav-item__bg'></div>
-                            <Link href='/features' as={process.env.BACKEND_URL + '/features'}>
+                            <Link href='/features'>
                                 <a className='nav-item__inner'>
                                     <h1>Features</h1>
                                 </a>
@@ -308,7 +308,7 @@ const Menu = () => {
                         </div>
                         <div className='nav-item'>
                             <div className='nav-item__bg'></div>
-                            <Link href='/specifications' as={process.env.BACKEND_URL + '/specifications'}>
+                            <Link href='/specifications'>
                                 <a className='nav-item__inner'>
                                     <h1>Specifications</h1>
                                 </a>
@@ -319,7 +319,7 @@ const Menu = () => {
                         </div>
                         <div className='nav-item'>
                             <div className='nav-item__bg'></div>
-                            <Link href='/order' as={process.env.BACKEND_URL + '/order'}>
+                            <Link href='/order'>
                                 <a className='nav-item__inner'>
                                     <h1>Order</h1>
                                 </a>

@@ -66,7 +66,7 @@ const Cursor = () => {
     }, []);
 
     useEffect(() => {
-        const getScale = (a, b) => Math.abs(Math.min(Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)) / 1e3, 0.04));
+        const getScale = (a, b) => Math.abs(Math.min(Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)) / 1e3, 0.075));
         const getAngle = (a, b) => (180 * Math.atan2(b, a)) / Math.PI;
 
         const move = () => {
@@ -109,14 +109,15 @@ const Cursor = () => {
                 setSize('sm');
                 setSkew(2);
             });
-            target.addEventListener('click', () => setSize('sm'));
         });
 
         stickers.forEach((sticker) => {
             sticker.addEventListener('mouseenter', () => {
                 setStick(sticker);
             });
-            sticker.addEventListener('mouseleave', () => removeStick());
+            sticker.addEventListener('mouseleave', () => {
+                removeStick();
+            });
             sticker.addEventListener('click', () => removeStick());
         });
 
@@ -124,7 +125,6 @@ const Cursor = () => {
             targets.forEach((target) => {
                 target.removeEventListener('mouseenter', null);
                 target.removeEventListener('mouseleave', null);
-                target.removeEventListener('click', null);
             });
             stickers.forEach((sticker) => {
                 sticker.removeEventListener('mouseenter', null);

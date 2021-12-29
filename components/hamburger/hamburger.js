@@ -1,11 +1,13 @@
 import { useRouter } from 'next/router';
 import { useContext, useRef } from 'react';
+import { CursorContext } from '../cursor/cursor.manager';
 import { MenuContext } from '../menu/menu.manager';
 
 const Hamburger = () => {
     const { menuState, setMenuState } = useContext(MenuContext);
     let hamburger = useRef(null);
     const router = useRouter();
+    const { setSize } = useContext(CursorContext);
 
     const toggleMenuHandler = () => {
         let ham = hamburger;
@@ -17,14 +19,17 @@ const Hamburger = () => {
                 initial: null,
                 active: true,
             });
+            setSize('sm');
         } else if (menuState.active) {
             setMenuState({
                 active: !menuState.active,
             });
+            setSize('sm');
         } else if (!menuState.active) {
             setMenuState({
                 active: !menuState.active,
             });
+            setSize('sm');
         }
         setTimeout(() => {
             ham.disabled = false;

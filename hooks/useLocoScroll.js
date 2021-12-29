@@ -12,7 +12,7 @@ const useLocoScroll = () => {
             scroll = new LocomotiveScroll.default({
                 el: scrollEl,
                 smooth: true,
-                multiplier: 1,
+                inertia: 0.76,
                 class: 'is-revealed',
             });
         });
