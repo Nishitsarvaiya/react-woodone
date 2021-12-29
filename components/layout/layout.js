@@ -1,4 +1,4 @@
-import { Cursor, Menu, MenuManager, CursorManager } from '..';
+import { Cursor, Menu, MenuManager, CursorManager, Hamburger } from '..';
 import useLocoScroll from '../../hooks/useLocoScroll';
 
 const Layout = ({ children, ...restProps }) => {
@@ -11,6 +11,7 @@ const Layout = ({ children, ...restProps }) => {
                     {children}
                     {/* Footer */}
                     <Menu />
+                    <Hamburger />
                     <Cursor />
                 </div>
             </MenuManager>

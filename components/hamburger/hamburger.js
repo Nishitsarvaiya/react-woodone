@@ -1,14 +1,11 @@
+import { useRouter } from 'next/router';
 import { useContext, useRef } from 'react';
 import { MenuContext } from '../menu/menu.manager';
-import { CursorContext } from '../cursor/cursor.manager';
 
-const Hamburger = ({ page }) => {
-    const { setSize } = useContext(CursorContext);
+const Hamburger = () => {
     const { menuState, setMenuState } = useContext(MenuContext);
     let hamburger = useRef(null);
-
-    const mouseEntered = () => setSize('lg');
-    const mouseLeft = () => setSize('sm');
+    const router = useRouter();
 
     const toggleMenuHandler = () => {
         let ham = hamburger;
@@ -36,16 +33,17 @@ const Hamburger = ({ page }) => {
     };
 
     return (
-        <div className='hamburger-container'>
+        <div className={router.asPath === '/' ? 'hamburger-container center' : 'hamburger-container'}>
             <button
-                className={menuState.active ? 'hamburger active' : 'hamburger'}
+                className={menuState.active ? 'hamburger open' : 'hamburger close'}
                 onClick={toggleMenuHandler}
                 ref={(el) => (hamburger = el)}
                 data-cursor-target
                 data-cursor-stick>
-                <div></div>
-                <div></div>
-                <div></div>
+                <span className='hamburger-buns'>
+                    <span></span>
+                    <span></span>
+                </span>
             </button>
         </div>
     );

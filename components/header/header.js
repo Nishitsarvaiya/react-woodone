@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { useEffect } from 'react';
-import { CustomLink, Hamburger } from '..';
+import { CustomLink } from '..';
 
 const Header = ({ page }) => {
     useEffect(() => {
@@ -33,7 +33,7 @@ const Header = ({ page }) => {
                 ) : (
                     ''
                 )}
-                <Hamburger />
+                <div></div>
             </nav>
         </header>
     );
