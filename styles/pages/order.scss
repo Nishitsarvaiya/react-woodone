@@ -1,0 +1,150 @@
+.order-section {
+	margin-top: 200px;
+	padding: 0 4vw;
+	border-bottom: 1px solid $dark-grey;
+
+	.order-grid {
+		display: flex;
+		gap: 4rem;
+
+		.order-col {
+			flex: 1;
+
+			.order-title {
+				font-size: $text-xl;
+				margin-bottom: 1rem;
+				font-weight: 500;
+				overflow: hidden;
+			}
+
+			.order-text {
+				font-size: $text-sm;
+				color: $grey;
+				letter-spacing: 0.2px;
+				margin-bottom: 1.5rem;
+
+				span {
+					color: $white;
+				}
+			}
+
+			.order-message {
+				font-size: $text-sm;
+				color: $dark-grey;
+			}
+
+			.order-form {
+				&-section {
+					margin-bottom: 4rem;
+
+					.title-line {
+						width: 100%;
+						height: 1px;
+						background-color: $white;
+						margin: 2rem 0;
+						transform-origin: center center;
+					}
+
+					&-title {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+
+						h3 {
+							font-size: 2rem;
+						}
+					}
+
+					&-inputs {
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+						gap: 1rem 3rem;
+
+						input {
+							border: none;
+							background: none;
+							border-bottom: 1px solid $grey;
+							color: $white;
+							padding: 1rem 0;
+							font-size: $text-xs;
+							letter-spacing: 0.5px;
+
+							&:focus {
+								outline: none;
+								color: $white;
+								border-bottom-color: $white;
+							}
+
+							&::placeholder {
+								font-size: $text-xs;
+								letter-spacing: 0.5px;
+								color: $grey;
+							}
+						}
+					}
+
+					.order {
+						display: flex;
+						justify-content: space-between;
+
+						&-info,
+						&-price {
+							.title {
+								font-size: $text-xs;
+								margin-bottom: 0.5rem;
+							}
+						}
+
+						&-info {
+							p {
+								font-size: $text-sm;
+								color: $grey;
+							}
+						}
+
+						&-price {
+							text-align: end;
+
+							.price {
+								font-size: $text-md;
+								line-height: 1;
+							}
+							.bottom {
+								font-size: 0.75rem;
+								color: $grey;
+							}
+						}
+					}
+				}
+
+				.submit-btn {
+					background-color: $white;
+					border: none;
+					border-radius: none;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					padding: 3rem;
+					width: 100%;
+					margin-bottom: 2rem;
+
+					.icon {
+						svg {
+							width: 32px;
+							height: 32px;
+							fill: $black;
+						}
+					}
+
+					.text {
+						font-size: $text-sm;
+						font-weight: 600;
+						color: $black;
+						text-transform: uppercase;
+						letter-spacing: normal;
+					}
+				}
+			}
+		}
+	}
+}

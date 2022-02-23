@@ -8,3 +8,4 @@ export { default as Gallery } from './gallery/gallery';
 export { default as Cursor } from './cursor/cursor';
 export { default as CursorManager } from './cursor/cursor.manager';
 export { default as CustomLink } from './link/link';
+export { default as CustomSelect } from './select/select';
